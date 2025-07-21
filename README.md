@@ -11,15 +11,10 @@ go mod tidy
 go run main.go
 ```
 ## Encryption text
-```bashcurl -X POST http://localhost:8080/encrypt-text \
+```bash
+curl -X POST http://localhost:8080/encrypt-text \
   -H "Content-Type: application/json" \
   -d '{"text":"hello world", "password":"my-secret"}'
-```
-## Encryption text
-```bash
-curl -X POST http://localhost:8080/decrypt-text \
-  -H "Content-Type: application/json" \
-  -d '{"cipher":"...","nonce":"...","password":"my-secret"}'
 ```
 ## Notes
 *Uses NaCl’s XChaCha20-Poly1305 with Base64 encoding.*
