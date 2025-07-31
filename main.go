@@ -350,9 +350,14 @@ func main() {
 			})
 		}
 
-		if req.Text == "" || req.Password == "" {
+		if req.Text == "" {
 			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"error": "Text and password are required",
+				"error": "Text is missing",
+			})
+		}
+		if req.Password == "" {
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				"error": "Password is missing",
 			})
 		}
 
